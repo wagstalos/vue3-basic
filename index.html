@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue 3</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <div class="container" :style="styles">
+            <!-- <label for="themeBlack">
+                <input type="checkbox" :checked="themeBlack" name="themeBlack" id="themeBlack"> Tema escuro
+ 
+            </label> -->
+
+            <div class="checkbox-wrapper-54">
+                <label class="switch">
+                  <input type="checkbox" :checked="themeBlack" @click="toogleTheme" name="themeBlack" id="themeBlack">
+                  <span class="slider"></span>
+                </label>
+              </div>
+
+            <h1>{{ title }}</h1>
+            <p style="text-align: center;">{{fullName}} </p>
+
+            <h2 style="text-align: end;"> Carrinho ( <span class="cart">{{ cart.length }}</span> )</h2>
+
+            <ul>
+                <li v-for="(product, index) in products" :key="index">
+                    <div class="headerwrap">
+                        <img v-bind:src="product.image" v-bind:alt="product.title">
+                    </div>
+
+                    <div class="description">
+                        <h3>{{ product.title }}</h2>
+                            <div class="stars">
+                                <strong v-if="product.stars === 0">{{product.stars}} 0</strong>
+                                <strong v-else-if="product.stars === 1">⭐</strong>
+                                <strong v-else-if="product.stars === 2">⭐⭐</strong>
+                                <strong v-else-if="product.stars === 3">⭐⭐⭐</strong>
+                                <strong v-else-if="product.stars === 4">⭐⭐⭐⭐</strong>
+                                <strong v-else-if="product.stars === 5">⭐⭐⭐⭐⭐</strong>
+                            </div>
+
+                            <p class="text-description">{{ product.description}}</p>
+                    </div>
+
+                    <button v-if="inCart(product)" class="button-87" v-on:click.prevent="removeCart(product)">
+                        REMOVE CART
+                    </button>
+
+                    <button class="button-87" v-on:click.prevent="addCart(product)" v-else>
+                        ADD CART
+                    </button>
+
+
+                </li>
+            </ul>
+            <hr>
+        </div>
+
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./app.js"></script>
+
+</body>
+
+</html>
