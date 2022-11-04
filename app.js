@@ -1,7 +1,6 @@
 const { createApp } = Vue;
 
 createApp({
-  el: "#example-1",
 
   data() {
     return {
