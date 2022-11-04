@@ -54,9 +54,6 @@ createApp({
 
       cart: [],
 
-      // textColor: '#000',
-      // bgColor: '#fff',
-
       styles: {
         backgroundColor: "#fff",
         color: "#100328",
