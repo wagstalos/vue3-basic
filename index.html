@@ -64,7 +64,7 @@
                             <p class="text-description">{{ product.description}}</p>
                     </div>
 
-                    <button v-if="inCart(product)" class="button-87" v-on:click.prevent="removeCart(product)">
+                    <button v-if="inCart(product)" class="button-87 button-disabled" v-on:click.prevent="removeCart(product)">
                         REMOVE CART
                     </button>
 
